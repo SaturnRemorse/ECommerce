@@ -11,23 +11,30 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RestController;
 
 import java.util.List;
 
-@Controller
+@RestController
 @RequiredArgsConstructor
 @Slf4j
-@RequestMapping(path= "/core")
+@RequestMapping(path= "/orders")
 public class OrderController {
 
     private final OrderService orderService;
 
-    @GetMapping("/")
+
+    @GetMapping(path = "/helloOrders")
+    public String helloOrder(){
+        return "hello from orders";
+    }
+
+    @GetMapping(path = "/")
     public ResponseEntity<List<OrderRequestDto>> getOrders(){
         return new ResponseEntity<>(orderService.getAllOrder(), HttpStatus.OK);
     }
 
-    @GetMapping("/{oId}")
+    @GetMapping(path = "/{oId}")
     public ResponseEntity<OrderRequestDto> getOrderById(@PathVariable Long oId){
         return new ResponseEntity<>(orderService.getOrderById(oId), HttpStatus.OK);
     }
