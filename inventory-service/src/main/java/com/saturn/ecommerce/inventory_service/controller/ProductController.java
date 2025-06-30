@@ -2,6 +2,7 @@ package com.saturn.ecommerce.inventory_service.controller;
 
 import com.saturn.ecommerce.inventory_service.dto.ProductDto;
 import com.saturn.ecommerce.inventory_service.service.ProductService;
+import jakarta.servlet.http.HttpServletRequest;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.cloud.client.ServiceInstance;
@@ -30,9 +31,10 @@ public class ProductController {
 
 
     @GetMapping("/fetchorders")
-    public String fetchOrders(){
+    public String fetchOrders(HttpServletRequest httpServletRequest){
+        log.info(httpServletRequest.getHeader("x-custom-header"));
         ServiceInstance serviceInstance = discoveryClient.getInstances("order-service").getFirst();
-        return restClient.get().uri(serviceInstance.getUri()+"/api/v1/orders/helloOrders")
+        return restClient.get().uri(serviceInstance.getUri()+"/orders/core/helloOrders")
                 .retrieve()
                 .body(String.class);
     }
