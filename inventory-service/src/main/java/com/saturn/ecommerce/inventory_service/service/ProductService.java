@@ -1,9 +1,12 @@
 package com.saturn.ecommerce.inventory_service.service;
 
 
+import com.saturn.ecommerce.inventory_service.dto.OrderRequestDto;
+import com.saturn.ecommerce.inventory_service.dto.OrderRequestItemDto;
 import com.saturn.ecommerce.inventory_service.dto.ProductDto;
 import com.saturn.ecommerce.inventory_service.entity.Product;
 import com.saturn.ecommerce.inventory_service.repository.ProductRepository;
+import jakarta.transaction.Transactional;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.modelmapper.ModelMapper;
@@ -32,4 +35,25 @@ public class ProductService {
                 .orElseThrow(() -> new RuntimeException("Inventory not Found"));
         return mapper.map(product, ProductDto.class);
     }
+
+
+    @Transactional
+    public Double reduceStock(OrderRequestDto order){
+        log.info("reducing stocks");
+        Double total_price = 0.0;
+        for(OrderRequestItemDto orderRequestItemDto: order.getItems()){
+           Long pId = orderRequestItemDto.getPId();
+           Integer quantity = orderRequestItemDto.getQuantity();
+
+           Product product = productRepository.findById(pId).orElseThrow(()->
+           new RuntimeException("Product does not exits"));
+           if(product.getStock()<quantity){
+               throw new RuntimeException("Product not in stock");
+           }
+           product.setStock(product.getStock()-quantity);
+           total_price+=quantity*product.getPrice();
+        }
+        return total_price;
+    }
+
 }

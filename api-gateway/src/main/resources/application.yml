@@ -15,7 +15,7 @@ spring:
         - id : inventory-service
           uri: lb://INVENTORY-SERVICE
           predicates:
-            - Path=/api/v2/inventory/**
+            - Path=/api/v1/inventory/**
           filters:
             - StripPrefix=2
             - AddRequestHeader=X-Custom-Header, FranzHerman
