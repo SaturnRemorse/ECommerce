@@ -22,8 +22,9 @@ public class OrderController {
 
 
     @GetMapping(path = "/helloOrders")
-    public String helloOrder(){
-        return "hello from orders";
+    public String helloOrder(@RequestHeader("X-USER-ID") Long userId){
+
+        return "hello from orders "+userId.toString();
     }
 
 
