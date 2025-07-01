@@ -8,12 +8,15 @@ import com.saturn.ecommerce.order_service.entities.OrderItem;
 import com.saturn.ecommerce.order_service.entities.OrderStatus;
 import com.saturn.ecommerce.order_service.entities.Orders;
 import com.saturn.ecommerce.order_service.repositories.OrderRepo;
+import io.github.resilience4j.ratelimiter.annotation.RateLimiter;
+import io.github.resilience4j.retry.annotation.Retry;
 import lombok.RequiredArgsConstructor;
 import lombok.Setter;
 import lombok.extern.slf4j.Slf4j;
 import org.modelmapper.ModelMapper;
 import org.springframework.stereotype.Service;
 
+import java.util.ArrayList;
 import java.util.List;
 
 @Service
@@ -25,12 +28,18 @@ public class OrderService {
     private final ModelMapper mapper;
     private final InventoryFeignClient inventoryFeignClient;
 
+    @RateLimiter(name="getOrdersRate", fallbackMethod = "getAllOrderFallback")
     public List<OrderRequestDto> getAllOrder(){
         log.info("Fetching all orders");
         List<Orders> orders = orderRepo.findAll();
         return orders.stream()
                 .map(order -> mapper.map(order, OrderRequestDto.class)).toList();
 
+
+    }
+    public List<OrderRequestDto> getAllOrderFallback(Throwable throwable){
+        log.error("too many requests : {}", throwable.getMessage());
+        return new ArrayList<>();
 
     }
 
@@ -40,7 +49,9 @@ public class OrderService {
         return mapper.map(order, OrderRequestDto.class);
     }
 
+    @Retry(name= "inventoryRetry", fallbackMethod = "createOrderFallback")
     public OrderRequestDto createOrderRequest(OrderRequestDto orderRequestDto) {
+        log.info("inside create order");
         Double totalPrice = inventoryFeignClient.reduceStocks(orderRequestDto);
 
         Orders orders = mapper.map(orderRequestDto, Orders.class);
@@ -55,4 +66,9 @@ public class OrderService {
 
 
     }
+    public OrderRequestDto createOrderFallback(OrderRequestDto orderRequestDto, Throwable throwable) {
+        log.error("Fallback occurred due to :{}", throwable.getMessage());
+        return new OrderRequestDto();
+    }
+
 }

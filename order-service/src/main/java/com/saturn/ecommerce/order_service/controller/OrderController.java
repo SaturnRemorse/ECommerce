@@ -3,6 +3,7 @@ package com.saturn.ecommerce.order_service.controller;
 import com.saturn.ecommerce.order_service.clients.InventoryFeignClient;
 import com.saturn.ecommerce.order_service.dtos.OrderRequestDto;
 import com.saturn.ecommerce.order_service.service.OrderService;
+import io.github.resilience4j.ratelimiter.annotation.RateLimiter;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.http.HttpStatus;
@@ -24,6 +25,7 @@ public class OrderController {
     public String helloOrder(){
         return "hello from orders";
     }
+
 
     @GetMapping(path = "/")
     public ResponseEntity<List<OrderRequestDto>> getOrders(){
