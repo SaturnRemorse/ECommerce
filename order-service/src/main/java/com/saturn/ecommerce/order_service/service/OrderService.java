@@ -8,6 +8,7 @@ import com.saturn.ecommerce.order_service.entities.OrderItem;
 import com.saturn.ecommerce.order_service.entities.OrderStatus;
 import com.saturn.ecommerce.order_service.entities.Orders;
 import com.saturn.ecommerce.order_service.repositories.OrderRepo;
+import io.github.resilience4j.circuitbreaker.annotation.CircuitBreaker;
 import io.github.resilience4j.ratelimiter.annotation.RateLimiter;
 import io.github.resilience4j.retry.annotation.Retry;
 import lombok.RequiredArgsConstructor;
@@ -49,7 +50,8 @@ public class OrderService {
         return mapper.map(order, OrderRequestDto.class);
     }
 
-    @Retry(name= "inventoryRetry", fallbackMethod = "createOrderFallback")
+    //@Retry(name= "inventoryRetry", fallbackMethod = "createOrderFallback")
+    @CircuitBreaker(name="inventoryCircuitBreaker", fallbackMethod = "createOrderFallback")
     public OrderRequestDto createOrderRequest(OrderRequestDto orderRequestDto) {
         log.info("inside create order");
         Double totalPrice = inventoryFeignClient.reduceStocks(orderRequestDto);
