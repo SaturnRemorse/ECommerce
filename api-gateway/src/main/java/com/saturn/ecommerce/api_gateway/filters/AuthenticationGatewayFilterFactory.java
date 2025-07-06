@@ -21,6 +21,12 @@ public class AuthenticationGatewayFilterFactory extends AbstractGatewayFilterFac
 
     @Override
     public GatewayFilter apply(Config config) {
+
+        if(!config.isEnabled){
+            return (exchange, chain) -> {
+                return chain.filter(exchange);
+            };
+        }
         return (exchange, chain) ->{
 
             String authorizationHeaders = exchange.getRequest().getHeaders().getFirst("Authorization");
