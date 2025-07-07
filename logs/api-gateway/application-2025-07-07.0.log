@@ -1,0 +1,107 @@
+07-07-2025 20:24:18.492 [background-preinit] [-] INFO  api-gateway-o.h.validator.internal.util.Version.<clinit> - HV000001: Hibernate Validator 8.0.2.Final
+07-07-2025 20:24:18.507 [main] [-] INFO  api-gateway-c.s.e.a.ApiGatewayApplication.logStarting - Starting ApiGatewayApplication using Java 23.0.1 with PID 91780 (/Users/ishaan/Desktop/SpringBoot/eCommerce/api-gateway/target/classes started by ishaan in /Users/ishaan/Desktop/SpringBoot/eCommerce)
+07-07-2025 20:24:18.508 [main] [-] INFO  api-gateway-c.s.e.a.ApiGatewayApplication.logStartupProfileInfo - No active profile set, falling back to 1 default profile: "default"
+07-07-2025 20:24:18.524 [main] [-] INFO  api-gateway-o.s.c.c.c.ConfigServerConfigDataLoader.logTo - Fetching config from server at : http://localhost:8888
+07-07-2025 20:24:18.525 [main] [-] INFO  api-gateway-o.s.c.c.c.ConfigServerConfigDataLoader.logTo - Located environment: name=api-gateway, profiles=[default], label=null, version=7b3afe8bd234967d5c0b268bce16e62eb137d9ca, state=
+07-07-2025 20:24:18.961 [main] [-] INFO  api-gateway-o.s.cloud.context.scope.GenericScope.setSerializationId - BeanFactory id=7a5f0fbd-eebe-3a28-a0e6-bf3e3a7b5eda
+07-07-2025 20:24:19.133 [main] [-] WARN  api-gateway-o.s.c.g.c.GatewayClassPathWarningAutoConfiguration.<init> - 
+
+**********************************************************
+
+The artifact spring-cloud-gateway-server is deprecated. It will be removed in the next major release. Please add spring-cloud-gateway-server-webflux dependency.
+
+**********************************************************
+
+
+07-07-2025 20:24:19.241 [main] [-] INFO  api-gateway-o.s.c.g.r.RouteDefinitionRouteLocator.lambda$initFactories$1 - Loaded RoutePredicateFactory [After]
+07-07-2025 20:24:19.241 [main] [-] INFO  api-gateway-o.s.c.g.r.RouteDefinitionRouteLocator.lambda$initFactories$1 - Loaded RoutePredicateFactory [Before]
+07-07-2025 20:24:19.241 [main] [-] INFO  api-gateway-o.s.c.g.r.RouteDefinitionRouteLocator.lambda$initFactories$1 - Loaded RoutePredicateFactory [Between]
+07-07-2025 20:24:19.241 [main] [-] INFO  api-gateway-o.s.c.g.r.RouteDefinitionRouteLocator.lambda$initFactories$1 - Loaded RoutePredicateFactory [Cookie]
+07-07-2025 20:24:19.241 [main] [-] INFO  api-gateway-o.s.c.g.r.RouteDefinitionRouteLocator.lambda$initFactories$1 - Loaded RoutePredicateFactory [Header]
+07-07-2025 20:24:19.241 [main] [-] INFO  api-gateway-o.s.c.g.r.RouteDefinitionRouteLocator.lambda$initFactories$1 - Loaded RoutePredicateFactory [Host]
+07-07-2025 20:24:19.242 [main] [-] INFO  api-gateway-o.s.c.g.r.RouteDefinitionRouteLocator.lambda$initFactories$1 - Loaded RoutePredicateFactory [Method]
+07-07-2025 20:24:19.242 [main] [-] INFO  api-gateway-o.s.c.g.r.RouteDefinitionRouteLocator.lambda$initFactories$1 - Loaded RoutePredicateFactory [Path]
+07-07-2025 20:24:19.242 [main] [-] INFO  api-gateway-o.s.c.g.r.RouteDefinitionRouteLocator.lambda$initFactories$1 - Loaded RoutePredicateFactory [Query]
+07-07-2025 20:24:19.242 [main] [-] INFO  api-gateway-o.s.c.g.r.RouteDefinitionRouteLocator.lambda$initFactories$1 - Loaded RoutePredicateFactory [ReadBody]
+07-07-2025 20:24:19.242 [main] [-] INFO  api-gateway-o.s.c.g.r.RouteDefinitionRouteLocator.lambda$initFactories$1 - Loaded RoutePredicateFactory [RemoteAddr]
+07-07-2025 20:24:19.242 [main] [-] INFO  api-gateway-o.s.c.g.r.RouteDefinitionRouteLocator.lambda$initFactories$1 - Loaded RoutePredicateFactory [XForwardedRemoteAddr]
+07-07-2025 20:24:19.242 [main] [-] INFO  api-gateway-o.s.c.g.r.RouteDefinitionRouteLocator.lambda$initFactories$1 - Loaded RoutePredicateFactory [Weight]
+07-07-2025 20:24:19.242 [main] [-] INFO  api-gateway-o.s.c.g.r.RouteDefinitionRouteLocator.lambda$initFactories$1 - Loaded RoutePredicateFactory [CloudFoundryRouteService]
+07-07-2025 20:24:19.332 [main] [-] INFO  api-gateway-o.s.b.a.e.web.EndpointLinksResolver.<init> - Exposing 16 endpoints beneath base path '/actuator'
+07-07-2025 20:24:19.454 [main] [-] INFO  api-gateway-o.s.c.n.e.c.DiscoveryClientOptionalArgsConfiguration.restTemplateDiscoveryClientOptionalArgs - Eureka HTTP Client uses RestTemplate.
+07-07-2025 20:24:19.461 [main] [-] WARN  api-gateway-o.s.c.g.s.w.s.StarterDeprecatedAutoConfiguration.<init> - 
+
+**********************************************************
+
+spring-cloud-starter-gateway is deprecated. It will be removed in the next major release. Please use spring-cloud-starter-gateway-server-webflux instead.
+
+**********************************************************
+
+
+07-07-2025 20:24:19.463 [main] [-] WARN  api-gateway-o.s.c.l.c.LoadBalancerCacheAutoConfiguration$LoadBalancerCaffeineWarnLogger.afterPropertiesSet - Spring Cloud LoadBalancer is currently working with the default cache. While this cache implementation is useful for development and tests, it's recommended to use Caffeine cache in production.You can switch to using Caffeine cache, by adding it and org.springframework.cache.caffeine.CaffeineCacheManager to the classpath.
+07-07-2025 20:24:19.485 [main] [-] INFO  api-gateway-o.s.c.n.eureka.InstanceInfoFactory.create - Setting initial instance status as: STARTING
+07-07-2025 20:24:19.492 [main] [-] INFO  api-gateway-c.netflix.discovery.DiscoveryClient.<init> - Initializing Eureka in region us-east-1
+07-07-2025 20:24:19.494 [main] [-] INFO  api-gateway-c.n.d.s.r.aws.ConfigClusterResolver.getClusterEndpoints - Resolving eureka endpoints via configuration
+07-07-2025 20:24:19.496 [main] [-] INFO  api-gateway-c.netflix.discovery.DiscoveryClient.fetchRegistry - Disable delta property : false
+07-07-2025 20:24:19.496 [main] [-] INFO  api-gateway-c.netflix.discovery.DiscoveryClient.fetchRegistry - Single vip registry refresh property : null
+07-07-2025 20:24:19.496 [main] [-] INFO  api-gateway-c.netflix.discovery.DiscoveryClient.fetchRegistry - Force full registry fetch : false
+07-07-2025 20:24:19.496 [main] [-] INFO  api-gateway-c.netflix.discovery.DiscoveryClient.fetchRegistry - Application is null : false
+07-07-2025 20:24:19.496 [main] [-] INFO  api-gateway-c.netflix.discovery.DiscoveryClient.fetchRegistry - Registered Applications size is zero : true
+07-07-2025 20:24:19.496 [main] [-] INFO  api-gateway-c.netflix.discovery.DiscoveryClient.fetchRegistry - Application version is -1: true
+07-07-2025 20:24:19.496 [main] [-] INFO  api-gateway-c.netflix.discovery.DiscoveryClient.getAndStoreFullRegistry - Getting all instance registry info from the eureka server
+07-07-2025 20:24:19.558 [main] [-] INFO  api-gateway-c.netflix.discovery.DiscoveryClient.getAndStoreFullRegistry - The response status is 200
+07-07-2025 20:24:19.559 [main] [-] INFO  api-gateway-c.netflix.discovery.DiscoveryClient.initScheduledTasks - Starting heartbeat executor: renew interval is: 30
+07-07-2025 20:24:19.559 [main] [-] INFO  api-gateway-c.n.discovery.InstanceInfoReplicator.<init> - InstanceInfoReplicator onDemand update allowed rate per min is 4
+07-07-2025 20:24:19.560 [main] [-] INFO  api-gateway-c.netflix.discovery.DiscoveryClient.<init> - Discovery Client initialized at timestamp 1751900059560 with initial instances count: 4
+07-07-2025 20:24:19.561 [main] [-] INFO  api-gateway-o.s.c.n.e.s.EurekaServiceRegistry.register - Registering application API-GATEWAY with eureka with status UP
+07-07-2025 20:24:19.561 [main] [-] INFO  api-gateway-c.netflix.discovery.DiscoveryClient.notify - Saw local status change event StatusChangeEvent [timestamp=1751900059561, current=UP, previous=STARTING]
+07-07-2025 20:24:19.562 [DiscoveryClient-InstanceInfoReplicator-%d] [-] INFO  api-gateway-c.netflix.discovery.DiscoveryClient.register - DiscoveryClient_API-GATEWAY/192.168.29.194:api-gateway: registering service...
+07-07-2025 20:24:19.575 [DiscoveryClient-InstanceInfoReplicator-%d] [-] INFO  api-gateway-c.netflix.discovery.DiscoveryClient.register - DiscoveryClient_API-GATEWAY/192.168.29.194:api-gateway - registration status: 204
+07-07-2025 20:24:19.621 [main] [-] INFO  api-gateway-o.s.b.w.e.netty.NettyWebServer.start - Netty started on port 8080 (http)
+07-07-2025 20:24:19.621 [main] [-] INFO  api-gateway-o.s.c.n.e.s.EurekaAutoServiceRegistration.onApplicationEvent - Updating port to 8080
+07-07-2025 20:24:19.640 [main] [-] INFO  api-gateway-c.s.e.a.ApiGatewayApplication.logStarted - Started ApiGatewayApplication in 2.826 seconds (process running for 3.046)
+07-07-2025 20:24:19.641 [main] [-] WARN  api-gateway-o.s.c.g.c.GatewayServerWebfluxPropertiesMigrationListener.logLegacyPropertiesReport - 
+The use of configuration keys that have been renamed was found in the environment:
+
+Property source 'configserver:https://github.com/SaturnRemorse/ecommerce-config-server/api-gateway.yml':
+	Key: spring.cloud.gateway.routes[0].id
+		Replacement: spring.cloud.gateway.server.webflux.routes[0].id
+	Key: spring.cloud.gateway.routes[0].uri
+		Replacement: spring.cloud.gateway.server.webflux.routes[0].uri
+	Key: spring.cloud.gateway.routes[0].predicates[0]
+		Replacement: spring.cloud.gateway.server.webflux.routes[0].predicates[0]
+	Key: spring.cloud.gateway.routes[0].filters[0]
+		Replacement: spring.cloud.gateway.server.webflux.routes[0].filters[0]
+	Key: spring.cloud.gateway.routes[0].filters[1].name
+		Replacement: spring.cloud.gateway.server.webflux.routes[0].filters[1].name
+	Key: spring.cloud.gateway.routes[0].filters[2].name
+		Replacement: spring.cloud.gateway.server.webflux.routes[0].filters[2].name
+	Key: spring.cloud.gateway.routes[0].filters[2].args.isenabled
+		Replacement: spring.cloud.gateway.server.webflux.routes[0].filters[2].args.isenabled
+	Key: spring.cloud.gateway.routes[1].id
+		Replacement: spring.cloud.gateway.server.webflux.routes[1].id
+	Key: spring.cloud.gateway.routes[1].uri
+		Replacement: spring.cloud.gateway.server.webflux.routes[1].uri
+	Key: spring.cloud.gateway.routes[1].predicates[0]
+		Replacement: spring.cloud.gateway.server.webflux.routes[1].predicates[0]
+	Key: spring.cloud.gateway.routes[1].filters[0]
+		Replacement: spring.cloud.gateway.server.webflux.routes[1].filters[0]
+	Key: spring.cloud.gateway.routes[1].filters[1]
+		Replacement: spring.cloud.gateway.server.webflux.routes[1].filters[1]
+	Key: spring.cloud.gateway.routes[1].filters[2].name
+		Replacement: spring.cloud.gateway.server.webflux.routes[1].filters[2].name
+
+
+Each configuration key has been temporarily mapped to its replacement for your convenience. To silence this warning, please update your configuration to use the new keys.
+
+07-07-2025 20:29:19.500 [AsyncResolver-bootstrap-executor-%d] [-] INFO  api-gateway-c.n.d.s.r.aws.ConfigClusterResolver.getClusterEndpoints - Resolving eureka endpoints via configuration
+07-07-2025 20:47:03.964 [AsyncResolver-bootstrap-executor-%d] [-] INFO  api-gateway-c.n.d.s.r.aws.ConfigClusterResolver.getClusterEndpoints - Resolving eureka endpoints via configuration
+07-07-2025 20:52:03.970 [AsyncResolver-bootstrap-executor-%d] [-] INFO  api-gateway-c.n.d.s.r.aws.ConfigClusterResolver.getClusterEndpoints - Resolving eureka endpoints via configuration
+07-07-2025 20:57:03.917 [AsyncResolver-bootstrap-executor-%d] [-] INFO  api-gateway-c.n.d.s.r.aws.ConfigClusterResolver.getClusterEndpoints - Resolving eureka endpoints via configuration
+07-07-2025 21:02:03.918 [AsyncResolver-bootstrap-executor-%d] [-] INFO  api-gateway-c.n.d.s.r.aws.ConfigClusterResolver.getClusterEndpoints - Resolving eureka endpoints via configuration
+07-07-2025 21:06:09.675 [reactor-http-nio-3] [-] INFO  api-gateway-c.s.e.a.filters.LoggingOrdersFilter.lambda$apply$0 - Order filter Pre: http://localhost:8080/orders/core/create-order
+07-07-2025 21:06:09.676 [reactor-http-nio-3] [-] INFO  api-gateway-c.s.e.a.filters.GlobalLoggingFilter.filter - Logging from Global pre: http://localhost:8080/orders/core/create-order
+07-07-2025 21:06:09.730 [reactor-http-nio-3] [-] ERROR api-gateway-i.n.r.d.DnsServerAddressStreamProviders.<clinit> - Unable to load io.netty.resolver.dns.macos.MacOSDnsServerAddressStreamProvider, fallback to system defaults. This may result in incorrect DNS resolutions on MacOS. Check whether you have a dependency on 'io.netty:netty-resolver-dns-native-macos'. Use DEBUG level to see the full stack: java.lang.UnsatisfiedLinkError: failed to load the required native library
+07-07-2025 21:06:10.219 [reactor-http-nio-3] [-] INFO  api-gateway-c.s.e.a.filters.GlobalLoggingFilter.lambda$filter$0 - Logging from Global post : 200 OK
+07-07-2025 21:07:03.922 [AsyncResolver-bootstrap-executor-%d] [-] INFO  api-gateway-c.n.d.s.r.aws.ConfigClusterResolver.getClusterEndpoints - Resolving eureka endpoints via configuration
+07-07-2025 21:12:03.933 [AsyncResolver-bootstrap-executor-%d] [-] INFO  api-gateway-c.n.d.s.r.aws.ConfigClusterResolver.getClusterEndpoints - Resolving eureka endpoints via configuration
